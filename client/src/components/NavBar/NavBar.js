@@ -19,7 +19,7 @@ class NavBar extends Component {
         <div id="navbarExampleTransparentExample" className="navbar-menu">
         <div class="navbar-end">
       <div class="navbar-item">
-      <Link to="/HomePage">
+      <Link to="/Home">
       <button type="submit" class="btn btn-outline-dark">Home</button>
       </Link>
       </div>

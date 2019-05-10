@@ -15,6 +15,7 @@ const login = (req, user) => {
       if(err) {
         reject(new Error('Something went wrong'))
       }else{
+        console.log("login succesful")
         resolve(user);
       }
     })
@@ -35,7 +36,6 @@ router.post('/signup', (req, res, next) => {
     next(new Error('You must provide valid credentials'));
   }
 
-  // Check if user exists in DB
   User.findOne({ username })
   .then( foundUser => {
     if (foundUser) throw new Error('Username already exists');
@@ -49,19 +49,22 @@ router.post('/signup', (req, res, next) => {
       email
     }).save();
   })
-  .then( savedUser => login(req, savedUser)) // Login the user using passport
-  .then( user => res.json({status: 'signup & login successfully', user})) // Answer JSON
+  .then( savedUser => login(req, savedUser)) 
+  .then( user => {
+    console.log("entraa")
+    res.json({status: 'signup & login successfully', user})
+  })
   .catch(e => next(e));
 });
 
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, theUser, failureDetails) => {
     
-    // Check for errors
+   
     if (err) next(new Error('Something went wrong')); 
     if (!theUser) next(failureDetails)
 
-    // Return user and logged in
+   
     login(req, theUser).then(user => res.status(200).json(req.user));
 
   })(req, res, next);
