@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import AuthService from './AuthService';
+import { withRouter } from 'react-router'
 
 
 
@@ -27,7 +28,7 @@ class Login extends Component {
         }, 
         () => {
           this.props.getUser(response.user);
-          this.props.history.push("/AllCircuits");
+          this.props.history.push("/allCircuits"); //cambio de ruta
       })
     })
       .catch(error => {
@@ -70,4 +71,4 @@ class Login extends Component {
   }
 
 }
-export default Login;
+export default withRouter(Login);

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Switch, Route,Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Form from "./components/Form/Form";
 import AllCircuits from "./components/AllCircuits/AllCircuits";
@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Signup from "./components/Auth/Signup";
 import Login from "./components/Auth/Login";
 import AuthService from "./components/Auth/AuthService";
-import Contents from "./components/contents/Contents";
+// import Contents from "./components/contents/Contents";
 
 
 export default class App extends React.Component {

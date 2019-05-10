@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import AuthService from './AuthService'
+import { withRouter } from 'react-router'
 
 
 class Signup extends Component {
@@ -25,7 +26,7 @@ class Signup extends Component {
         email: "",
       }, () => {
         this.props.getUser(response.user);
-        this.props.history.push("/Home");
+        this.props.history.push("/home");
        
       });
         
@@ -78,4 +79,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);

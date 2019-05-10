@@ -1,21 +1,13 @@
 import React, { Component } from 'react'
-import NavBar from '../NavBar/NavBar';
-
-
-
+import { Link } from "react-router-dom";
+import Circuit from '../Info-circuit/Circuit';
 export default class AllCircuits extends Component {
   render() {
     return (
-      <React.Fragment>
-        <NavBar></NavBar>
-        <div className="image">
-        <img src="" alt="picture"/>
-
-        </div>
-        <div className="infoCircuit">
-        </div>
-        <div className="map"></div>
-      </React.Fragment>
+      <div>
+        
+       <Link to="/circuit">Trip</Link>
+      </div>
     )
   }
 }
