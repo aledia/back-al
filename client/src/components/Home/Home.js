@@ -5,7 +5,7 @@ export default class HomePage extends Component {
     return (
       
         <React.Fragment>
-            <nav class="navbar  fluid-container navbar-light bg-secondary d-flex justify-content-end">
+            <nav className="navbar  fluid-container navbar-light bg-secondary d-flex justify-content-end">
                <Link to="/login"><button type="button" class="btn btn-light mr-md-3" >Login</button></Link>
                 <Link to="/signup"> <button type="button" class="btn btn-light mr-md-3">Signup</button></Link>
             </nav>

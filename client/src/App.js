@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Signup from "./components/Auth/Signup";
 import Login from "./components/Auth/Login";
 import AuthService from "./components/Auth/AuthService";
+import Circuit from "./components/Info-circuit/Circuit";
 // import Contents from "./components/contents/Contents";
 
 
@@ -77,6 +78,7 @@ export default class App extends React.Component {
             <Route exact path="/form" component={Form} />
             <Route exact path="/infoUser" component={InfoUser} />
             <Route exact path="/allCircuits" component={AllCircuits} />
+            <Route exact path="/circuit/:id" component={Circuit} />
             <Route exact path="/NavBar" component={NavBar} />
             <Route
               exact
@@ -89,6 +91,9 @@ export default class App extends React.Component {
               render={(match) => <Login  {...match}  getUser={this.getUser} />}
             />
           </Switch>
+          <footer>
+          Copyright Ironhack
+        </footer>
         </div>
       );
     }

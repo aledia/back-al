@@ -1,18 +1,17 @@
-
 import axios from "axios";
 
 export default class TravelServices {
 
   constructor() {
     this.service = axios.create({
-      baseURL: `http://localhost:3010`,
+      baseURL: `http://localhost:3010/api/travels`,
       withCredentials: true 
     })
   }
 
   all = () => {
     return this.service 
-      .get(`/all`)
+      .get(`/`)
       .then(data => data.data)
   }
 

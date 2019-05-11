@@ -17,10 +17,10 @@ class NavBar extends Component {
         </div>
       
         <div id="navbarExampleTransparentExample" className="navbar-menu">
-        <div class="navbar-end">
-      <div class="navbar-item">
-      <Link to="/Home">
-      <button type="submit" class="btn btn-outline-dark">Home</button>
+        <div className="navbar-end">
+      <div className="navbar-item">
+      <Link to="/">
+      <button type="submit" className="btn btn-outline-dark">Home</button>
       </Link>
       </div>
     </div>

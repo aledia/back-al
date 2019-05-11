@@ -15,7 +15,7 @@ const login = (req, user) => {
       if(err) {
         reject(new Error('Something went wrong'))
       }else{
-        console.log("login succesful")
+        //console.log("login succesful")
         resolve(user);
       }
     })
