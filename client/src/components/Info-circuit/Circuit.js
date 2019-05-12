@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./circuit.css";
-import Api from "../Travel/TravelService";
+import TravelService from "../Travel/TravelService";
 
 export default class Circuit extends Component {
   constructor(props) {
     super(props);
-    this.api = new Api();
+    this.travelService = new TravelService();
     this.state = {
       oneCircuits: ""
     };
@@ -15,26 +15,44 @@ export default class Circuit extends Component {
   }
   getOneCircuit() {
     let id = this.props.match.params.id;
+    
     console.log(this.props.match.params.id);
-    this.api.oneData(id).then(oneCircuits => {
+    this.travelService.oneData(id).then(oneCircuits => {
       console.log(oneCircuits);
       this.setState({
         ...this.state,
         oneCircuits: oneCircuits
       });
     });
-  }
+  } 
+  
+  
 
   render() {
-    return (
+    if (this.state.redirect) {
+      return <Redirect to='/' />
+    }
+    const circuit= this.state.circuit
+    return (this.state.circuit && 
       <div className="circuit">
-        <Link to={`/one/${this.props._id}`} />
-        <img src={this.props.image_url} alt={this.props.title} />
-        <h3>{this.state.oneCircuit}</h3>
-        <p>{this.props.description}</p>
-
-        <h1>Circuit</h1>
+            <div>
+            <img alt="" src={circuit.image_url}/>
+            </div>
+            <div>
+            <p>{this.props.circuit.title}</p>
+            <p>{circuit.description}</p>
+            <p>{circuit.coords}</p>
+           
+            <Link to={`/edit/${circuit._id}`}><button>Edit</button></Link>
+            <button onClick={() => this.clearCircuit()}>Delete </button>
+            </div>   
       </div>
-    );
-  }
-}
+       )
+      }
+    }
+
+
+
+
+
+

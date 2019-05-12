@@ -64,7 +64,8 @@ export default class App extends React.Component {
             <Route exact path="/form" component={Form} />
             <Route exact path="/infoUser" component={InfoUser} />
             <Route exact path="/allCircuits" component={AllCircuits} />
-            <Route exact path="/NavBar" component={NavBar} />
+            <Route exact path="/navBar" component={NavBar} />
+            <Route exact path="/circuit/:id" component={Circuit} />
          </Switch>
         
        
@@ -78,7 +79,7 @@ export default class App extends React.Component {
             <Route exact path="/form" component={Form} />
             <Route exact path="/infoUser" component={InfoUser} />
             <Route exact path="/allCircuits" component={AllCircuits} />
-            <Route exact path="/circuit/:id" component={Circuit} />
+            <Route exact path="/circuit/:id" component={Circuit}   />
             <Route exact path="/NavBar" component={NavBar} />
             <Route
               exact
@@ -91,9 +92,7 @@ export default class App extends React.Component {
               render={(match) => <Login  {...match}  getUser={this.getUser} />}
             />
           </Switch>
-          <footer>
-          Copyright Ironhack
-        </footer>
+          
         </div>
       );
     }

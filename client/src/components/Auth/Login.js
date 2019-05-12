@@ -1,9 +1,10 @@
 
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+  import { Link } from 'react-router-dom';
 import AuthService from './AuthService';
 import { withRouter } from 'react-router'
-
+import "./auth.css";
+import NavBar from '../NavBar/NavBar';
 
 
 class Login extends Component {
@@ -28,7 +29,7 @@ class Login extends Component {
         }, 
         () => {
           this.props.getUser(response.user);
-          this.props.history.push("/allCircuits"); //cambio de ruta
+          this.props.history.push("/allCircuits");
       })
     })
       .catch(error => {
@@ -48,25 +49,38 @@ class Login extends Component {
   }
   render() {
 
-    return (<div>
-      <h3>Please, login to our site</h3>
-
-      <form onSubmit={this.handleFormSubmit}>
+    return (
+    <React.Fragment>
+      <NavBar></NavBar>
+      <div className="big-container">
+     <div className="small-container">
+     <h4>Dont have account?..</h4>
+     <Link to="/signup"><button id="btn-left" className="btn btn-outline-light"> Signup</button></Link>
+     </div>
+      <div className="form-container">
+      {/* <h3>Please, login to our site</h3> */}
+       
+       <form onSubmit={this.handleFormSubmit}> 
+       <div className="form-group">
         <fieldset>
           <label>Username:</label>
-          <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+          <input type="text" className="form-control" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
         </fieldset>
-
+        </div>
+        <div className="form-group">
         <fieldset>
           <label>Password:</label>
-          <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+          <input type="password" className="form-control"  name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
         </fieldset>
-
-        <input type="submit" value="Login" />
+        </div>
+        <input id="left"className="btn btn-outline-secondary"  type="submit" value="Login" />
       </form>
 
-      <h1>{this.state.error ? 'Error' : ''}</h1>
-    </div>
+      <h1>{this.state.error ? 'Error' : ''}</h1> 
+      </div>
+     
+      </div>
+    </React.Fragment>
     )
   }
 

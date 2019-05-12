@@ -1,0 +1,38 @@
+.form-container{
+    width: 350px;
+    height: 400px;
+    margin-top:120px;
+    border: 1px solid rgb(155, 153, 153);
+    padding: 20px;
+    border-radius: 2%;
+    background-color: rgb(210, 146, 226);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    bottom:-40px;
+    left:50px;
+    color:white;
+    
+}
+.big-container{
+    width: 700px;
+    height: 320px;
+    background-color: blueviolet;
+    margin:0 auto;
+    position: relative;
+    top:150px;
+}
+#left{
+    margin-left: 30%;
+}
+.small-container{
+    color:white;
+    position: absolute;
+    left:60%;
+    top:120px;
+}
+#btn-left{
+    margin-left:20%;
+
+}
