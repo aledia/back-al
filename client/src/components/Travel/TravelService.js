@@ -17,7 +17,7 @@ export default class TravelServices {
 
   oneData = (id) => {
     return this.service
-      .get(`/one/${id}`)
+      .get(`/${id}`)
       .then(data => data.data)
   }
 

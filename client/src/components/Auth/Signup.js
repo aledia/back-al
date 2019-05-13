@@ -30,7 +30,7 @@ class Signup extends Component {
           },
           () => {
             this.props.getUser(response.user);
-            this.props.history.push("/home");
+            //this.props.history.push("/");
           }
         );
       })
@@ -64,7 +64,9 @@ class Signup extends Component {
             </Link>
           </div>
           <div className="form-container">
-          <form className="form-group" onSubmit={e => this.handleFormSubmit(e)}>
+          <form className="form-group" onSubmit={(e) => {
+              return this.handleFormSubmit(e);
+            }}>
             <div className="form-group">
               <fieldset>
                 <label>Username:</label>

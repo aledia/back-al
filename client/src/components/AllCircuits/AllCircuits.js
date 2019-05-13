@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TravelService from "../Travel/TravelService";
-//import NavBar from "../NavBar/NavBar";
+// import NavBar from "../NavBar/NavBar";
 import "./circuits.css";
 export default class AllCircuits extends Component {
   constructor(props) {
@@ -10,9 +10,11 @@ export default class AllCircuits extends Component {
     this.state = {
       allCircuits: []
     };
-    this.getAllCircuits();
+    
+    
   }
   getAllCircuits() {
+   
     this.travelService.all().then(allCircuits => {
       this.setState({
         ...this.state,
@@ -21,18 +23,25 @@ export default class AllCircuits extends Component {
     });
   }
  
+  componentDidMount(){
+  
+    this.getAllCircuits();
+  }
 
   render() {
+    
     return (
-      this.state.allCircuits && (
-        <div className="card  mb-33 d-flex justify-content-center align-items-center flex-column" style={{ width: 320 }}>
-          {this.state.allCircuits.map((circuit, idx) => {
+      <React.Fragment>
+        <div className="boxMovie d-flex container-fluid justify-content-center">
+        
+           {this.state.allCircuits.map((circuit, idx) => {
             return (
-              <div key={idx} className="boxMovie" >
+              <div key={idx} id="card" className="card d-flex justify-content-around align-items-center" style={{ width: 280 }}>
+               
                 <div>
                   <img
                     alt=""
-                    className="card-img-top"
+                    className="card-img-top" 
                     src={circuit.image_url}
                   />
                 </div>
@@ -42,16 +51,17 @@ export default class AllCircuits extends Component {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <Link className="btn btn-dark" to={`/${circuit._id}`}>
-                  <Link to={`/one/${this.props._id}`} > Link </Link>
-                    Go somewhere
-                  </Link>
+                  
+                  <Link className="btn btn-outline-secondary" to={`/circuit/${circuit._id}`} > Circuit </Link>
+                  
+                  
                 </div>
               </div>
             );
           })}
         </div>
-      )
+        </React.Fragment>
+      
     );
   }
 }

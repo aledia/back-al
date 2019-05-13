@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
   import { Link } from 'react-router-dom';
 import AuthService from './AuthService';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router-dom'
 import "./auth.css";
 import NavBar from '../NavBar/NavBar';
 
@@ -28,7 +28,8 @@ class Login extends Component {
        
         }, 
         () => {
-          this.props.getUser(response.user);
+          this.props.getUser(response)
+
           this.props.history.push("/allCircuits");
       })
     })
@@ -48,7 +49,6 @@ class Login extends Component {
   
   }
   render() {
-
     return (
     <React.Fragment>
       <NavBar></NavBar>
@@ -60,7 +60,7 @@ class Login extends Component {
       <div className="form-container">
       {/* <h3>Please, login to our site</h3> */}
        
-       <form onSubmit={this.handleFormSubmit}> 
+      <form className="form-group" onSubmit={(e) => this.handleFormSubmit(e)}>
        <div className="form-group">
         <fieldset>
           <label>Username:</label>
@@ -73,7 +73,7 @@ class Login extends Component {
           <input type="password" className="form-control"  name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
         </fieldset>
         </div>
-        <input id="left"className="btn btn-outline-secondary"  type="submit" value="Login" />
+        <input id="left" className="btn btn-outline-secondary"  type="submit" value="Login" />
       </form>
 
       <h1>{this.state.error ? 'Error' : ''}</h1> 
