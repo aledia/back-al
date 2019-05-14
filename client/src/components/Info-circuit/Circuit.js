@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-// import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./circuit.css";
 import TravelService from "../Travel/TravelService";
+import InfoUser from "../InfoUser/InfoUser";
 
 export default class Circuit extends Component {
   constructor(props) {
@@ -18,10 +19,7 @@ export default class Circuit extends Component {
 
     // console.log(this.props.match.params.id);
     this.travelService.oneData(id).then(data => {
-     
-      this.setState({ ...this.state, oneCircuit: data }, () => {
-        
-      });
+      this.setState({ ...this.state, oneCircuit: data }, () => {});
     });
   }
 
@@ -36,23 +34,30 @@ export default class Circuit extends Component {
       return (
         <React.Fragment>
           <h1 className="text-center mr-md-6">{this.state.oneCircuit.title}</h1>
-        <div className="circuit d-flex  flex-nowrap">
-          
-          <div className="imgCircuit">
-            <img  alt="" src={this.state.oneCircuit.image_url} />
-          </div>
-          <div className="descriptionCircuit">
-            <p>{this.state.oneCircuit.descriptions}</p>
-            {/* <p>{this.state.oneCircuit.coords}</p> */}
+          <div className="circuit d-flex  flex-wrap">
+            <div className="containerCircuit d-flex flex-column">
+              <div className="imgCircuit">
+                <img alt="" src={this.state.oneCircuit.image_url} />
+              </div>
+              <div className="mapCircuit ">
+                <h3>Mapa</h3>
+              </div>
+            </div>
 
-            {/* <Link to={`/edit/${circuit._id}`}><button>Edit</button></Link> */}
-            <button onClick={() => this.clearCircuit()}>Delete </button>
+            <div className="descriptionCircuit">
+              <p>{this.state.oneCircuit.descriptions}</p>
+              {/* <p>{this.state.oneCircuit.coords}</p> */}
+
+              {/* <Link to={`/edit/${circuit._id}`}><button>Edit</button></Link> */}
+              {/* <button className="btn btn-outline-secondary" onClick={() => this.clearCircuit()}>Delete </button> */}
+            </div>
+            <div className="authorInfo">
+              
+              <img alt="" src={this.state.oneCircuit.author_img} />
+              <h4> Creado por: <Link to={`/creator/${InfoUser._id}`} >       {this.state.oneCircuit.author}   </Link>  </h4>
+            </div>
           </div>
-          <div className="mapCircuit">
-            
-            <h3>Mapa</h3>
-          </div>
-        </div></React.Fragment>
+        </React.Fragment>
       );
     }
   }

@@ -6,8 +6,8 @@ class NavBar extends Component {
     return (
         <nav className="navbar" >
         <div className="navbar-brand">
-        <Link to="/">
-            <img src="http://www.nomada-travel.com.ec/wp-content/uploads/2015/06/nomada-travel-logo-web1123456.png" alt="logo" width="112" height="50"/>
+        <Link to="/allCircuits" >
+            <h2>Nomada Travel</h2>
             </Link>
           <div id="nav"className="navbar-burger burger" data-target="navbarExampleTransparentExample">
             <span></span>

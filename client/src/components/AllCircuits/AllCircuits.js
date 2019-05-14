@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TravelService from "../Travel/TravelService";
 // import NavBar from "../NavBar/NavBar";
-import "./circuits.css";
+import "./allCircuits.css";
 export default class AllCircuits extends Component {
   constructor(props) {
     super(props);
@@ -32,11 +32,14 @@ export default class AllCircuits extends Component {
     
     return (
       <React.Fragment>
-        <div className="boxMovie d-flex container-fluid justify-content-center">
+        <div>
+          
+        </div>
+        <div className="boxMovie  ">
         
            {this.state.allCircuits.map((circuit, idx) => {
             return (
-              <div key={idx} id="card" className="card d-flex justify-content-around align-items-center" style={{ width: 280 }}>
+              <div key={idx}  className="card"  style={{ width: 280 }}>
                
                 <div>
                   <img
@@ -46,13 +49,12 @@ export default class AllCircuits extends Component {
                   />
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title"> {circuit.title}</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <h5 className="card-title text-center"> {circuit.title}</h5>
+                  {/* <p className="card-text">
+                  {circuit.descriptions}
+                  </p> */}
                   
-                  <Link className="btn btn-outline-secondary" to={`/circuit/${circuit._id}`} > Circuit </Link>
+                  <Link id="btn"className="btn btn-outline-secondary" to={`/circuit/${circuit._id}`} > Circuit </Link>
                   
                   
                 </div>
