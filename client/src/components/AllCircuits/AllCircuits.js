@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import TravelService from "../Travel/TravelService";
 // import NavBar from "../NavBar/NavBar";
 import "./allCircuits.css";
+// import SearchBar from "../SearchBar/SearchBar";
+
 export default class AllCircuits extends Component {
   constructor(props) {
     super(props);
@@ -27,14 +29,18 @@ export default class AllCircuits extends Component {
   
     this.getAllCircuits();
   }
+    
+  
+ 
+
+  
+
 
   render() {
     
     return (
       <React.Fragment>
-        <div>
-          
-        </div>
+        
         <div className="boxMovie  ">
         
            {this.state.allCircuits.map((circuit, idx) => {
