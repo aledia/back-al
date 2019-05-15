@@ -27,7 +27,7 @@ export default class App extends React.Component {
       loggedInUser: userObj
     });
 
-    console.log(`Usuario: ${this.state.loggedInUser}`);
+    // console.log(`Usuario: ${this.state.loggedInUser}`);
   };
 
   logout = () => {
@@ -52,9 +52,10 @@ export default class App extends React.Component {
     }
   }
   render() {
-    this.fetchUser();
+    //this.fetchUser();
     // console.log(this.state);
     if (this.state.loggedInUser) {
+      // console.log("logeado")
       return (
         <React.Fragment>
           <NavBar logoutFunction={this.logout} />
@@ -70,6 +71,7 @@ export default class App extends React.Component {
         </React.Fragment>
       );
     } else {
+      // console.log("no logeado")
       return (
         <div className="App">
           <Switch>

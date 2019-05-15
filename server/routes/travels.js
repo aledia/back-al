@@ -6,7 +6,7 @@ const Circuit = require("../models/Circuits");
 
 
 router.get("/", (req, res, next) => {
-  Circuit.find({})
+  Circuit.find()
     .then(data => {
       res.json(data);
     })
@@ -25,10 +25,12 @@ router.get("/:id", (req, res, next) => {
     });
 });
 
+
 /******************************Crear cerador con viaje ***********/
 
-router.get("circuit/creator/:id", (req, res, next) => {
-  Circuit.findById(req.params.id)
+router.get("/creator/:id", (req, res, next) => {
+  console.log(req.params.id);
+  Circuit.find({creator_id: req.params.id})
     .then(data => {
       res.json(data);
     })
@@ -38,8 +40,6 @@ router.get("circuit/creator/:id", (req, res, next) => {
 });
 
 /************************************************** */
-
-
 
 router.post("/", (req, res, next) => {
   const { title, description, image_url, coords } = req.body;

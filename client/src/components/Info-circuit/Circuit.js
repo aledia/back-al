@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./circuit.css";
 import TravelService from "../Travel/TravelService";
-import Creator from "../creator/Creator";
+// import Creator from "../creator/Creator";
 
 export default class Circuit extends Component {
   constructor(props) {

@@ -31,7 +31,7 @@ class AuthService {
 
   oneData = (id) => {
     return this.service
-    .get(`/${id}`)
+    .get(`/user/${id}`)
     .then(data => data.data)
   }
 }

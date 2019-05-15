@@ -14,19 +14,17 @@ export default class Creator extends Component {
     this.getOneCreator();
   }
   getOneCreator() {
-  const userId = this.props.match.params.id;
-  this.AuthService.oneData(userId)
-  .then(userData => {
-     this.setState({
-      ...this.state,
-      userData
-    })
-  })  
-  };
-  
+    const userId = this.props.match.params.id;
+    this.AuthService.oneData(userId).then(userData => {
+      this.setState({
+        ...this.state,
+        userData
+      });
+    });
+  }
 
   render() {
-    console.log(this.state.userData)
+    // console.log(this.state.userData);
     if (this.state.userData === null) {
       return (
         <div>
@@ -36,17 +34,19 @@ export default class Creator extends Component {
     } else {
       return (
         <React.Fragment>
+
           <div className="creatorContainer">
-          
-          <img src={this.state.userData.img} alt=""/>
+            <img src={this.state.userData.img} alt="" />
             <h1>{this.state.userData.username}</h1>
           </div>
           <div className="circuitsUserContainer">
-           <AllCircuits
-            
+            <AllCircuits id={this.props.match.params.id} />
            
-           ></AllCircuits>
           </div>
+         
+           {/* <input className="btn btn-dark"  type="submit" value="Create" /> */}
+           {/* <input  className="btn btn-dark"  type="submit" value="Delete" /> */}
+          {/*  */}
         </React.Fragment>
       );
     }

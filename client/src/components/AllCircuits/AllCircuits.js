@@ -25,7 +25,19 @@ export default class AllCircuits extends Component {
     });
   }
 
+  getUserCircuits(id){
+    this.travelService.circuitsWithUSer(id)
+    .then(circuits => {
+      this.setState({
+        ...this.state,
+        allCircuits: circuits,
+        filteredCircuits: circuits
+      });
+    })
+  }
+
   componentDidMount() {
+    this.props.id?this.getUserCircuits(this.props.id):
     this.getAllCircuits();
   }
 
