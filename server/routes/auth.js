@@ -9,13 +9,12 @@ const login = (req, user) => {
   return new Promise((resolve,reject) => {
     req.login(user, err => {
       console.log('req.login ')
-      console.log(user)
+      // console.log(user)
 
       
       if(err) {
         reject(new Error('Something went wrong'))
       }else{
-        //console.log("login succesful")
         resolve(user);
       }
     })
@@ -28,8 +27,8 @@ router.post('/signup', (req, res, next) => {
 
   const {username, password, email} = req.body;
 
-  console.log('username', username)
-  console.log('password', password)
+  // console.log('username', username)
+  // console.log('password', password)
 
   // Check for non empty user or password
   if (!username || !password){
@@ -51,7 +50,7 @@ router.post('/signup', (req, res, next) => {
   })
   .then( savedUser => login(req, savedUser)) 
   .then( user => {
-    console.log("entraa")
+    // console.log("entraa")
     res.json({status: 'signup & login successfully', user})
   })
   .catch(e => next(e));
@@ -78,6 +77,17 @@ router.get('/currentuser', (req,res,next) => {
     next(new Error('Not logged in'))
   }
 })
+
+  router.get("/:id", (req, res, next) => {
+    User.findById(req.params.id)
+      .then(data => {
+        res.json(data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+
 
 
 router.get('/logout', (req,res) => {

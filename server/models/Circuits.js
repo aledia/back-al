@@ -6,10 +6,7 @@ const newsSchema = new Schema({
   title: String,
   descriptions: String,
   image_url: String,
-  creator: String,
-  creator_id: { type : Schema.Types.ObjectId, ref: 'users' } ,
-  creator_img: String,
-  
+  creator_id: { type : Schema.Types.ObjectId, ref: 'User' } ,  
   coords:[  {latitude:  Number , longitude: Number}  ]
 }, {
   timestamps: {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+// import { MapContainer } from '../MapContainer/MapContainer';
 export default class HomePage extends Component {
   render() {
     return (
@@ -12,6 +13,10 @@ export default class HomePage extends Component {
             <div>
             <h1> Imagen Logo</h1>
             </div>
+          {/* <div>
+            <h2>Mapa</h2>
+            <MapContainer></MapContainer>
+          </div> */}
 
         </React.Fragment>
       

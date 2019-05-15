@@ -22,11 +22,17 @@ class AuthService {
   loggedin = () => {
     return this.service.get('/currentUser',)
     .then(response => response.data)
-  }//
+  }
 
   logout = () => {
     return this.service.get('/logout',)
     .then(response => response.data)
+  }
+
+  oneData = (id) => {
+    return this.service
+    .get(`/${id}`)
+    .then(data => data.data)
   }
 }
 

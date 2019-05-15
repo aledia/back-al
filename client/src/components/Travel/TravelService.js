@@ -14,7 +14,17 @@ export default class TravelServices {
       .get(`/`)
       .then(data => data.data)
   }
+  
 
+
+  /*************creador con usu*************** */
+  circuitsWithUSer = (id) => {
+    return this.service 
+      .get(`/creator/${id}`)
+      .then(data => data.data)
+  }
+
+/************************************* */
   oneData = (id) => {
     return this.service
       .get(`/${id}`)

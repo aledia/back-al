@@ -60,7 +60,7 @@ class Login extends Component {
       <div className="form-container">
       {/* <h3>Please, login to our site</h3> */}
        
-      <form className="form-group" onSubmit={(e) => this.handleFormSubmit(e)}>
+      <form className="form-group" autocomplete="off" onSubmit={(e) => this.handleFormSubmit(e)}>
        <div className="form-group">
         <fieldset>
           <label>Username:</label>

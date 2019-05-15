@@ -3,15 +3,7 @@ const router = express.Router();
 const User = require("../models/User");
 const Circuit = require("../models/Circuits");
 
-router.get("/:id", (req, res, next) => {
-  Circuit.findById(req.params.id)
-    .then(data => {
-      res.json(data);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});
+
 
 router.get("/", (req, res, next) => {
   Circuit.find({})
@@ -22,6 +14,32 @@ router.get("/", (req, res, next) => {
       console.log(err);
     });
 });
+
+router.get("/:id", (req, res, next) => {
+  Circuit.findById(req.params.id).populate('creator_id')
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+/******************************Crear cerador con viaje ***********/
+
+router.get("circuit/creator/:id", (req, res, next) => {
+  Circuit.findById(req.params.id)
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+/************************************************** */
+
+
 
 router.post("/", (req, res, next) => {
   const { title, description, image_url, coords } = req.body;
