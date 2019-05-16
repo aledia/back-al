@@ -10,6 +10,7 @@ import Circuit from "./components/Info-circuit/Circuit";
 import HomePage from "./components/HomePage/HomePage";
 import Creator from "./components/creator/Creator";
 import New from "./components/New/New";
+import Footer from "./components/Footer/Footer";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ export default class App extends React.Component {
       return (
         <React.Fragment>
           <NavBar logoutFunction={this.logout} />
+          
           <Switch>
             <Route exact path="/allCircuits" component={AllCircuits} />
             <Route exact path="/circuit/:id" component={Circuit} />

@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const User = require("../models/User");
 const Circuits = require("../models/Circuits");
 const bcryptSalt = 10;
-
+console.log("bbdd: " + process.env.DBURL)
 const dbName = "nomadaTravel";
 mongoose
   .connect(process.env.DBURL, { useNewUrlParser: true })
@@ -66,10 +66,13 @@ function startSeed() {
         creator_id: fakeUserID,
         coords: [
           {
-            latitude1: 40.472274,
-            longitude1: -3.713781
+            latitude1: -1.283253,
+            longitude1: 36.817245
           },
-          { latitude2: 43.472274, longitude2: -8.713781 }
+          { latitude2: -0.71667, longitude2: 36.43591 }, 
+          { latitude2: -0.459821, longitude2: 36.10068 },//esta
+          
+
         ]
       },
       {
@@ -81,13 +84,16 @@ function startSeed() {
         creator_id: fakeUserID,
         coords: [
           {
-            latitude: 43.313401,
-            longitude: -6.054992
+             
+            latitude: 9.932543,
+            longitude: -84.079578 
           },
-
-          { latitude: 43.28156, longitude: -4.025519 },
-
-          { latitude: 43.1872449, longitude: -4.8390766 }
+          
+          { latitude: 10.18491 ,
+             longitude: -85.279833 },
+           
+          { latitude: 10.462085 , 
+            longitude: -84.70341 } //esta
         ]
       },
       {
@@ -98,16 +104,18 @@ function startSeed() {
           "https://www.touristforum.net/images/gallery/touristforum/Products/201400000073-431303-lake-mountains-landscape-building-italy-clouds-boat-house.jpg",
         creator_id: fakeUser2ID,
         coords: [
-          {
-            latitude: 37.17492,
-            longitude: -3.598484
-          },
-          {
-            latitude: 37.894254,
-            longitude: -4.784483
-          },
+           { 
 
-          { latitude: 37.894254, longitude: -4.784483 }
+            latitude: 59.91333,
+            longitude: 10.73897
+          },
+          {
+            
+            latitude: 61.20485,
+            longitude: 7.201497
+          },
+              //esta
+          { latitude: 59.91333, longitude: 10.73897 }
         ]
       },
       {
@@ -121,7 +129,7 @@ function startSeed() {
         creator_img:
           "https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2018/03/07/Recortada/img_econcejo_20180307-144642_imagenes_lv_terceros_istock-526427791-kTfD-U441332178228MrF-992x558@LaVanguardia-Web.jpg",
         coords: [
-           { 
+           { //está!
             latitude: 42.884970,
             longitude: -8.533607
           },
@@ -129,8 +137,8 @@ function startSeed() {
             latitude: 43.352569,
             longitude: -8.424704
           },
-            //faltan puntos
-          { latitude: 37.894254, longitude: -4.784483 }
+            
+          { latitude: 42.607517, longitude: -8.471494 }
         ]
       },
       {
@@ -142,15 +150,17 @@ function startSeed() {
         creator_id: fakeUser3ID,
         coords: [
           {
-            latitude: 37.17492,
-            longitude: -3.598484
+            //esta
+            latitude: 37.38863,
+            longitude:  -5.99534 
           },
           {
-            latitude: 37.894254,
-            longitude: -4.784483
+            latitude: 37.884581,
+            longitude:  -4.776014
           },
 
-          { latitude: 37.894254, longitude: -4.784483 }
+          { latitude: 36.529829 , longitude: -6.292568 },
+          { latitude: 37.38863 , longitude: -5.99534}
         ]
       },
       {
@@ -162,15 +172,22 @@ function startSeed() {
         creator_id: fakeUser4ID,
         coords: [
           {
-            latitude: 37.17492,
-            longitude: -3.598484
+            //esta 
+            latitude: 42.328553 ,
+            longitude: -2.467492
           },
           {
-            latitude: 37.894254,
-            longitude: -4.784483
+           
+            latitude: 42.46612,
+            longitude: -2.439668
           },
-
-          { latitude: 37.894254, longitude: -4.784483 }
+              
+          { latitude: 42.54397, 
+            longitude: -2.78572 },
+            
+            { latitude: 42.41822, 
+              longitude: -2.72865
+             },
         ]
       }
     ];

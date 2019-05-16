@@ -1,3 +1,7 @@
 .navbar{
     background-color:#43304C;
 }
+.navbar-brand img{
+    width: 120px;
+
+}

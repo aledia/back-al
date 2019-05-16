@@ -17,8 +17,8 @@ export default class Map extends Component {
                 stopover: true
             }}) 
         }
-        const directionsService =  new maps.DirectionsService;
-        const directionsDisplay =  new maps.DirectionsRenderer;
+        const directionsService =  new maps.DirectionsService();
+        const directionsDisplay =  new maps.DirectionsRenderer();
 
         const directionRequest = {
             origin: {

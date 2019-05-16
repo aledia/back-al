@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import "./nav.css"; 
+import logo from "./../Image/logo.png"
 class NavBar extends Component {
   render() {
     return (
         <nav className="navbar" >
         <div className="navbar-brand">
         <Link to="/allCircuits" >
-            <h2>Nomada Travel</h2>
+           <img src={logo} alt="" />
             </Link>
           <div id="nav"className="navbar-burger burger" data-target="navbarExampleTransparentExample">
             <span></span>
