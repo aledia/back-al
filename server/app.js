@@ -11,7 +11,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const cors = require('cors');
 
-mongoose.Promise = Promise;
+// mongoose.Promise = Promise;
 mongoose
   .connect(process.env.DBURL, {useNewUrlParser: true})
   .then(() => {
