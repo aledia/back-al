@@ -8,7 +8,7 @@ const passport = require('passport');
 const login = (req, user) => {
   return new Promise((resolve,reject) => {
     req.login(user, err => {
-      console.log('req.login ')
+      // console.log('req.login ')
       // console.log(user)
 
       

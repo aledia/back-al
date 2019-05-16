@@ -58,8 +58,7 @@ class Login extends Component {
      <Link to="/signup"><button id="btn-left" className="btn btn-outline-light"> Signup</button></Link>
      </div>
       <div className="form-container">
-      {/* <h3>Please, login to our site</h3> */}
-       
+            
       <form className="form-group"  onSubmit={(e) => this.handleFormSubmit(e)}>
        <div className="form-group">
         <fieldset>

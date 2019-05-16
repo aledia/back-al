@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TravelService from "../Travel/TravelService";
+// import NavBar from "../NavBar/NavBar";
 import "./allCircuits.css";
 import SearchBar from "../SearchBar/SearchBar";
-import New from "../New/New";
 
 export default class AllCircuits extends Component {
   constructor(props) {
@@ -75,6 +75,9 @@ export default class AllCircuits extends Component {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title text-center"> {circuit.title}</h5>
+                  {/* <p className="card-text">
+                  {circuit.descriptions}
+                  </p> */}
 
                   <Link
                     id="btn"
@@ -89,22 +92,6 @@ export default class AllCircuits extends Component {
           })}
         </div>
 
-        <div className="d-flex inputContainer">
-          <Link to={`/new`}>
-            <input
-              id="btnCreate"
-              className="btn btn-dark "
-              type="submit"
-              value="Create"
-            />
-          </Link>
-          <input
-            id="btnCreate"
-            className="btn btn-dark "
-            type="submit"
-            value="Delete"
-          />
-        </div>
       </React.Fragment>
     );
   }

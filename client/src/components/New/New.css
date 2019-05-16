@@ -1,0 +1,42 @@
+.formCont{
+    width: 400px;
+    height: 500px;
+    background-color:rgb(144, 162, 81);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    margin-top:50px;
+    border-radius: 10px;
+}
+ .extendedCardEdit input{
+    width: 300px;
+    height: 45px;
+    border-radius: 10px;
+    padding: 10px;
+   margin-top:10px;
+   
+}
+textarea{
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+    margin-top:10px;
+    
+
+}
+label{
+    width: 100%;
+    color:white;
+    font-weight: bold;
+}
+.extendedCardEdit{
+    margin:0 auto;
+}
+h2{
+    color:white;
+}
+#btnCreate{
+    margin:25px;
+}

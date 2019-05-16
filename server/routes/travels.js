@@ -26,29 +26,27 @@ router.get("/:id", (req, res, next) => {
 });
 
 
-/******************************Crear cerador con viaje ***********/
 
 router.get("/creator/:id", (req, res, next) => {
-  console.log(req.params.id);
+  // console.log(req.params.id);
   Circuit.find({creator_id: req.params.id})
     .then(data => {
       res.json(data);
     })
     .catch(err => {
-      console.log(err);
+      // console.log(err);
     });
 });
 
-/************************************************** */
 
-router.post("/", (req, res, next) => {
-  const { title, description, image_url, coords } = req.body;
+router.post("/new", (req, res, next) => {
+  const { title, descriptions, image_url, creator_id } = req.body;
 
   Circuit.create({
     title,
-    description,
+    descriptions,
     image_url,
-    coords
+    creator_id
   })
     .then(data => {
       res.json(data);

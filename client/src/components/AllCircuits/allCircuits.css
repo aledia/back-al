@@ -107,6 +107,16 @@ h1 {
   margin-left:35%;
 }
 
+.inputContainer{
+  display:flex;
+  justify-content: center;
+  margin-top:50px;
+}
 
-
+inputContainer input{
+  margin:20px;
+}
+.btn{
+  background-color: brown;
+}
 /* https://files.slack.com/files-pri/T02CQ4EN4-FJPL4QV1C/captura_de_pantalla_2019-05-13_a_las_9.44.51.png */

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import "./creator.css";
 import AuthService from "../Auth/AuthService";
-import AllCircuits from "../AllCircuits/AllCircuits";
+import AllCircuitsCreator from "../AllCircuits/AllCircuitsCreator";
 
 export default class Creator extends Component {
   constructor(props) {
@@ -40,13 +40,10 @@ export default class Creator extends Component {
             <h1>{this.state.userData.username}</h1>
           </div>
           <div className="circuitsUserContainer">
-            <AllCircuits id={this.props.match.params.id} />
+            <AllCircuitsCreator id={this.props.match.params.id} />
            
           </div>
-         
-           {/* <input className="btn btn-dark"  type="submit" value="Create" /> */}
-           {/* <input  className="btn btn-dark"  type="submit" value="Delete" /> */}
-          {/*  */}
+        
         </React.Fragment>
       );
     }

@@ -17,14 +17,13 @@ export default class TravelServices {
   
 
 
-  /*************creador con usu*************** */
+
   circuitsWithUSer = (id) => {
     return this.service 
       .get(`/creator/${id}`)
       .then(data => data.data)
   }
 
-/************************************* */
   oneData = (id) => {
     return this.service
       .get(`/${id}`)
@@ -32,6 +31,7 @@ export default class TravelServices {
   }
 
   newOne = (data) => {
+    // console.log(data)
     return this.service
       .post(`/new`, data)
   }

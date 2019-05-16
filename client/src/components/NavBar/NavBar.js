@@ -21,6 +21,7 @@ class NavBar extends Component {
         <div className="navbar-end">
       <div className="navbar-item">
       <Link to="/">
+      <img src="" alt=""/>
       <button onClick={this.props.logoutFunction} className="btn btn-outline-light">Logout</button>
       </Link>
       </div>
