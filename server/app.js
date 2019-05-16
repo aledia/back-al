@@ -13,7 +13,7 @@ const cors = require('cors');
 
 // mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.DBURL, {useNewUrlParser: true})
+  .connect(`${process.env.DBURL}`, {useNewUrlParser: true})
   .then(() => {
     console.log(`Connected to Mongo on ${DBURL}`)
   }).catch(err => {
