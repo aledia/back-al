@@ -15,28 +15,28 @@
     height: 45px;
     border-radius: 10px;
     padding: 10px;
-   margin-top:10px;
+   
    
 }
 textarea{
     width: 300px;
     height: 150px;
     border-radius: 10px;
-    margin-top:10px;
+   
     
 
 }
-label{
-    width: 100%;
-    color:white;
-    font-weight: bold;
+.top{
+    margin-top:15px;
+    margin-left:50px;
 }
+
 .extendedCardEdit{
     margin:0 auto;
 }
 h2{
-    color:white;
-}
-#btnCreate{
-    margin:25px;
-}
+    color:white;}
+    #btn_create{
+  margin-top:30px;
+  margin-left:150px;
+} 

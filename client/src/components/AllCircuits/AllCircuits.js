@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import TravelService from "../Travel/TravelService";
 import "./allCircuits.css";
 import SearchBar from "../SearchBar/SearchBar";
-import New from "../New/New";
+// import New from "../New/New";
 
 export default class AllCircuits extends Component {
   constructor(props) {
@@ -99,7 +99,7 @@ export default class AllCircuits extends Component {
             />
           </Link>
           <input
-            id="btnCreate"
+            id="btnCreate2"
             className="btn btn-dark "
             type="submit"
             value="Delete"

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 
 const User = require("../models/User");
@@ -6,7 +7,7 @@ const bcryptSalt = 10;
 
 const dbName = "nomadaTravel";
 mongoose
-  .connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true })
+  .connect(process.env.DBURL, { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -120,15 +121,15 @@ function startSeed() {
         creator_img:
           "https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2018/03/07/Recortada/img_econcejo_20180307-144642_imagenes_lv_terceros_istock-526427791-kTfD-U441332178228MrF-992x558@LaVanguardia-Web.jpg",
         coords: [
-          {
-            latitude: 37.17492,
-            longitude: -3.598484
+           { 
+            latitude: 42.884970,
+            longitude: -8.533607
           },
           {
-            latitude: 37.894254,
-            longitude: -4.784483
+            latitude: 43.352569,
+            longitude: -8.424704
           },
-
+            //faltan puntos
           { latitude: 37.894254, longitude: -4.784483 }
         ]
       },

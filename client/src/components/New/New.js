@@ -46,25 +46,25 @@ export default class New extends Component {
             <div className="formCont">
             <h2> Create new Circuit</h2>
       <form className="extendedCardEdit" onSubmit={e => this.create(e)}>
-       <label for="title"> Title:</label>
-        <input
+       {/* <label for="title"> Title:</label> */}
+        <input className="top"
           type="text"
-          placeholder="title"
+          placeholder="Title"
           value={data.title}
           onChange={e => this.dataUpdate(e.target.value, "title")}
         />
-        <label for="descriptions"> Description:</label>
-         <textarea  onChange={e => this.dataUpdate(e.target.value, "descriptions")}></textarea>
-        
-        <label for="imimage_url">Image Url</label>
-        <input
+        {/* <label for="descriptions"> Description:</label> */}
+         <textarea className="top" placeholder="Descriptions" onChange={e => this.dataUpdate(e.target.value, "descriptions")}></textarea>
+{/*         
+        <label for="imimage_url">Image Url</label> */}
+        <input className="top"
           type="text"
-          placeholder="image url"
+          placeholder="Image url"
           value={data.image_url}
           onChange={e => this.dataUpdate(e.target.value, "image_url")}
         />
         
-        <button className="btn btn-secondary" type="submit">Create Circuit</button>
+        <button id="btn_create" className="btn btn-secondary" type="submit">Create </button>
       </form>
       </div>
           )}}

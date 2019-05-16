@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./circuit.css";
 import TravelService from "../Travel/TravelService";
+import Map from "../Map/Map";
 
 
 export default class Circuit extends Component {
@@ -40,7 +41,9 @@ export default class Circuit extends Component {
                 <img alt="" src={this.state.oneCircuit.image_url} />
               </div>
               <div className="mapCircuit ">
-                <h3>Mapa</h3>
+                
+                <Map
+                  coords = {this.state.oneCircuit.coords}/>
               </div>
             </div>
 
@@ -66,4 +69,4 @@ export default class Circuit extends Component {
   }
 }
 
-// api key google maps AIzaSyCX_aQdF5ZCgOMtJYwiw8-94rxPxvJQBic
+

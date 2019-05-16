@@ -1,12 +1,12 @@
 h1{
  
-    margin-top:15px;
+    margin-top:25px;
     color:rgb(107, 128, 117);
   }
   .authorInfo{
     width: 100%;
-    height: auto;
-    /* background-color: brown; */
+    height: 150px;
+     background-color:rgb(198, 211, 174); 
     display: flex;
   }
   .authorInfo img{
@@ -14,13 +14,13 @@ h1{
     height: 100px;
     border-radius: 100%;
 
-    margin:50px;
+    margin:30px;
   }
   .descriptionCircuit{
     height: auto;
   }
   .authorInfo h4{
-    margin:80px;
+    margin:60px;
   }
   .authorInfo .creatorId{
     text-transform: capitalize;

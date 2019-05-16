@@ -28,7 +28,7 @@ const app = express();
 
 // Middleware Setup
 var whitelist = [
-  'http://localhost:3000'
+  'http://localhost:3000', `https://nomada-travel.herokuapp.com`
 ];
 var corsOptions = {
   origin: function(origin, callback){
@@ -75,6 +75,10 @@ app.use('/api/auth', authRouter);
 
 const travelsRouter = require('./routes/travels');
 app.use('/api/travels', travelsRouter);
+
+app.use((req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+  });
 
 
 module.exports = app;
