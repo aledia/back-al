@@ -11,6 +11,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const cors = require('cors');
 
+console.log("Nombre de la base de datooooos" + process.env.DBURL)
 // mongoose.Promise = Promise;
 mongoose
   .connect(process.env.DBURL, {useNewUrlParser: true})
